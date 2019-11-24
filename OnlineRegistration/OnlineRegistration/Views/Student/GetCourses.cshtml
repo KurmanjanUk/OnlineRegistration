@@ -1,0 +1,57 @@
+﻿@using OnlineRegistration.Helpers;
+@model List<OnlineRegistration.ViewModels.CoursesViewModel>
+@{
+    ViewBag.Title = "Перечень курсов";
+}
+
+<h2>Перечень курсов</h2>
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        var course = item.Course;
+        <div class="col-sm-3">
+            <div class="panel panel-default" style="height: 28em;">
+                <div class="panel-body">
+                    <img src="@course.GetImageSource()" class="img-responsive" />
+                    <hr />
+                    <dl>
+                        <dt>Ментор</dt>
+                        <dd>@course.Mentor</dd>
+                        <dt>Стоимость</dt>
+                        <dd>@course.Cost</dd>
+                        <dt>Дата начала</dt>
+                        <dd>@course.StartDate</dd>
+                    </dl>
+                    @using (Html.BeginForm("RegisterStudent", "Student"))
+                    {
+                        <input style="display: none" name="courseID" value="@course.CourseID" />
+                        if (!item.IsSelected)
+                        {
+                            <button class="btn btn-primary register" type="button">
+                                ЗАПИСАТЬСЯ НА КУРС
+                            </button>
+                        }
+                        else
+                        {
+                            <p class="label label-info">ВЫ УЖЕ ЗАРЕГИСТРИРОВАНЫ НА ДАННЫЙ КУРС</p>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(".register").on('click', function () {
+            var form = $(this).closest('form');
+            bootbox.confirm("Вы уверены, что выбираете этот курс? ", function (result) {
+                if (result) {
+                    form.submit();
+                }
+            });
+        });
+    });
+</script>

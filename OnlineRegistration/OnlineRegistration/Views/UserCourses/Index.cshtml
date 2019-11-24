@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OnlineRegistration.ViewModels.UserCourseViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Клиенты</h2>
+
+<p>
+    @Html.ActionLink("Добавить нового клиента", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.UserFullName)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </th>
+           
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { UserID=item.UserID, CourseID = item.CourseID }) |
+                @Html.ActionLink("Удалить", "Delete", new { UserID = item.UserID, CourseID = item.CourseID })
+            </td>
+        </tr>
+    }
+
+</table>

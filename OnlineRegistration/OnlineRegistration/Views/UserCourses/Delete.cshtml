@@ -1,0 +1,26 @@
+﻿@model OnlineRegistration.ViewModels.UserCourseViewModel
+
+@{
+    ViewBag.Title = "Аннулирование данных";
+}
+
+
+\
+<h2>Аннулирование данных</h2>
+
+<h3>Вы уверены, что хотите удалить данного клиента?</h3>
+<div>
+    <h4>Клиент</h4>
+    <hr />
+    <dl class="dl-horizontal"></dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться назад", "Index")
+        </div>
+    }
+</div>

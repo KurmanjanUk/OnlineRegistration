@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OnlineRegistration.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Курсы</h2>
+
+<p>
+    @Html.ActionLink("Добавить нового курса", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mentor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mentor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.CourseID }) |
+            @Html.ActionLink("Подробности", "Details", new { id=item.CourseID }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.CourseID })
+        </td>
+    </tr>
+}
+
+</table>

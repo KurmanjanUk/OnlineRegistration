@@ -194,14 +194,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\depositphotos_105514290-stock-photo-python-cubics-word.jpg" />
+    <Content Include="Content\Images\840px-Ai-machine-learning-python-1024x367.jpg" />
     <Content Include="Content\Images\depositphotos_16358703-stock-photo-programming-scheme.jpg" />
-    <Content Include="Content\Images\depositphotos_319759258-stock-photo-java-text-with-blueprint.jpg" />
-    <Content Include="Content\Images\depositphotos_320069624-stock-photo-php-text-with-bolts-wrench.jpg" />
-    <Content Include="Content\Images\frontend2.jpg" />
     <Content Include="Content\Images\c-sharp.jpg" />
+    <Content Include="Content\Images\frontEnd.jpg" />
+    <Content Include="Content\Images\Java.jpg" />
     <Content Include="Content\Images\MobileApp.jpg" />
     <Content Include="Content\Images\MobileApp2.jpg" />
+    <Content Include="Content\Images\PHP.jpg" />
     <Content Include="Content\Images\scratch2.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -270,7 +270,6 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\UserCourses\GetStudents.cshtml" />
     <Content Include="Views\UserCourses\GetUsersOfCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
